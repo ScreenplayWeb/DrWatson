@@ -1,0 +1,259 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="robots" content="noindex, nofollow" />
+<style type="text/css">
+body{background:#5c2d37;font-size:14px;}
+#titleBox{color:#ffee48;}
+h1{margin:10px 0;text-align:left;}
+#title{font-size:1em;}
+em{ color:#ffee48;}
+label{padding:3px 0 0 3px;}
+button{
+height:40px;
+width:185px;
+margin-left:10px;
+font-size:0.85em;
+font-weight:bold;
+}
+#btnTitle{color:white;text-align:center;margin-bottom:5px;}
+#timerBox{ margin:0 auto;background:#e2b45c;border:1px solid #5c2d37;}
+#timerBG{width:90%; height:40px; margin:0 auto; background: #fff;border:1px solid #5c2d37;}
+#timerInner{ height:34px; background:#fcfdfd;}
+h3#timerHead{text-align:center;margin: 5px 0}
+#timerInner{display:none; background:red; padding:0; border-top:3px solid #f66;border-bottom:3px solid #a00;}
+h3#caseName{color:#fff; text-align:center;}
+
+/*1024px#leftCol {width:600px; background:url(tile.png); float:left; padding:20px;
+-webkit-border-top-right-radius: 200px;
+-webkit-border-top-left-radius: 200px;
+-moz-border-radius-topright: 200px;
+-moz-border-radius-topleft: 200px;
+border-top-right-radius: 200px;
+border-top-left-radius: 200px;
+border:10px solid #FFF;
+margin-left:10px;*/
+}
+legend{font-size:1.25em;}
+
+
+p#clueText{font-size:1.75em;}
+#history{float:right; width:200px; margin:0 auto; padding:15px 10px; font-size:17px;}
+.clear{clear:both;}
+
+
+/*==LANDSCAPE================================================================*/
+@media only screen and (orientation:landscape) {
+#container{width:1024px; height:600px; margin:0 auto; background: #3cb9e9; position:relative; border:10px solid #FFF;}
+h1{margin-left:150px; width:276px;}
+#title{position:absolute; top:22px;left:426px;}
+
+#rightCol {width:220px; background:#e2b45c; position: absolute; top:10px; right:10px; border:1px solid #5c2d37;}
+#leftCol {width: 700px; background:#415065;  -webkit-border-top-right-radius: 150px;
+-webkit-border-top-left-radius: 150px;
+-moz-border-radius-topright: 150px;
+-moz-border-radius-topleft: 150px;
+border-top-right-radius: 150px;
+border-top-left-radius: 150px;
+border:10px solid #FFF;
+margin-left:10px;}
+#btnField{width:610px; margin:0 auto;}
+#cluePnl{width:680px; margin:10px auto; background:#fcfdfd;  }
+#locPnl{width:655px;}/*LOCATION FIELDSET*/
+/*#timerBox{height: 100px;width:200px; padding:15px 10px; font-size:17px;position:absolute;bottom:10px;right:10px;}*/
+#timerBox{height: 100px;width:200px; padding:15px 10px; font-size:17px;float:right;margin-top:20px;}
+#eightysix{height:4em;}
+}
+
+
+
+/*==PORTRAIT=================================================================*/
+@media only screen and (orientation:portrait) {
+#container{width:600px; height:1024px; margin:0 auto; background: #3cb9e9; position:relative; border:10px solid #FFF;}
+}
+</style>
+<script type="text/javascript" src="JS_221B-WEB1.js"></script>
+<title>221-B Baker Street Player&apos;s Aid</title>
+</head>
+
+<body>
+<!--===TO DO LIST
+=ADD TERMS OF USE POLICY
+=MAKE BUTTONS TALLER
+=FIX DOUBLE COUNTDOWN (IF CONSECUTIVE LOCATION BUTTONS PUSHED??)
+=FIX CANCEL BUTTON IN LANDSCAPE MODE
+==ADD HIDECLUE() TO LOCATION BUTTON PRESS FUNCTION?
+=PUT ALL JS ON THIS PAGE
+=ADD CORRECT SIZES AND PORTRAIT/LANDSCAPE SWITCH
+=HAVE CASE SELECTION RESET SEARCH HISTORY
+=REMOVE UNUSED STYLING BUT DUPLICATED STYLING IN COMMON AREA
+-->
+<div id="container">
+	<div id="titleBox">	
+		<h1>221 B Baker Street</h1>
+		<span id="title">&#151;The Master Detective Game</span>
+	</div>
+	
+<!--========LEFT COLUMN========-->
+<div id="leftCol">
+
+<!--==DISPLAY NAME OF SELECTED CASE==-->
+	<h3 id="caseName"></h3>
+
+<!--====LOCATIONS PANEL====-->
+<div id="btnField">
+	<h3 id="btnTitle">Select a location to search for clues...</h3>
+	
+	<button id="0" type="button" value="APOTHECARY" onclick="showClue(this)" >APOTHECARY</button>
+	<button id="1" type="button" value="BANK" onclick="showClue(this)" >BANK</button>
+	<button id="2" type="button" value="CARRIAGE DEPOT" onclick="showClue(this)" >CARRIAGE DEPOT</button>
+	<button id="3" type="button" value="DOCK" onclick="showClue(this)" >DOCK</button>
+ 
+	<button id="4" type="button" value="HOTEL" onclick="showClue(this)" >HOTEL</button>
+	<button id="5" type="button" value="LOCKSMITH" onclick="showClue(this)" >LOCKSMITH</button>
+	<button id="6" type="button" value="MUSEUM" onclick="showClue(this)" >MUSEUM</button>
+	<button id="7" type="button" value="NEWSPAPER SHOP" onclick="showClue(this)" >NEWSPAPER SHOP</button>
+	 
+	<button id="8" type="button" value="PARK" onclick="showClue(this)" >PARK</button>
+	<button id="9" type="button" value="PAWNBROKER" onclick="showClue(this)" >PAWNBROKER</button>
+	<button id="10" type="button" value="PLAYHOUSE" onclick="showClue(this)" >PLAYHOUSE</button>
+	<button id="11" type="button" value="PUB" onclick="showClue(this)" >PUB</button>
+	
+	<button id="12" type="button" value="SCOTLAND YARD" onclick="showClue(this)" >SCOTLAND YARD</button>
+	<button id="13" type="button" value="TOBACCONIST" onclick="showClue(this)" >TOBACCONIST</button>
+	<!--</fieldset>-->
+</div><!--END btnField-->
+
+<!--====CLUE PANEL====-->
+	<div id="cluePnl">
+	<fieldset for="roomSelect">
+		<legend>Clue Found On The Scene</legend>
+			<p id="clueText"></p>
+			<button id="eightysix" type="button" onclick="hideClue()" >HIDE THIS CLUE</button>
+	</fieldset>
+	</div>
+</div><!--==END leftCol==-->
+
+<!--========RIGHT COLUMN========-->
+<div id="rightCol">
+<!--==CASE# SELECT BOX==-->
+	<label for="CaseSelect">Select a mystery:</label>
+	<select id="CaseSelect" onchange="caseSelect(this)">
+		<option value="zz" selected="selected">--SELECT--</option>
+		<option value="0">Case #1</option>
+		<option value="1">Case #2</option>
+		<option value="2">Case #3</option>
+		<option value="3">Case #4</option>
+		<option value="4">Case #5</option>
+		<option value="5">Case #6</option>
+		<option value="6">Case #7</option>
+		<option value="7">Case #8</option>
+		<option value="8">Case #9</option>
+		<option value="9">Case #10</option>
+		<option value="10">Case #11</option>
+		<option value="11">Case #12</option>
+		<option value="12">Case #13</option>
+		<option value="13">Case #14</option>
+		<option value="14">Case #15</option>
+		<option value="15">Case #16</option>
+		<option value="16">Case #17</option>
+		<option value="17">Case #18</option>
+		<option value="18">Case #19</option>
+		<option value="19">Case #20</option>						
+	</select>
+<!--====HISTORY PANEL====-->
+	<div id="history">
+	<fieldset>
+		<legend>Location Search History</legend>
+		<p id="searchText"></p>
+	</fieldset>
+	</div>
+<!--====TIMER BOX====-->	
+	<div id="timerBox">
+		<h3 id="timerHead">TIMER</h3>
+		<div id="timerBG">
+			<div id="timerInner"></div>
+		</div>
+	</div>
+</div><!--==END rightCol==-->
+
+<!--====JAVASCRIPT====-->
+<script type="text/javascript">
+
+	var caseNum;	
+	var timeRemain;
+	var countdown;
+//####FUNCTION TO DISPLAY STRING NAME OF CASE AND GET CASE ID	####	
+	function caseSelect(dropdown) {
+	  case2show = dropdown.options[dropdown.selectedIndex].text;
+		caseNum = dropdown.options[dropdown.selectedIndex].value;
+  		
+		//CHECK WHICH CASE WAS SELECTED AND GRAB THE ID AND TEXT VALUE
+		//IF --SELECT-- WAS SELECTED, SHOW NOTHING	
+		if (caseNum !== "zz"){
+		var caseNameText = caseName[caseNum];
+		
+		//DISPLAY THE NAME OF THE CASE
+		document.getElementById('caseName').innerHTML = "You are currently solving: <br /><em>The Adventure of " + caseNameText + "</em>";
+		}
+		else document.getElementById('caseName').innerHTML = null;
+  }
+
+//####FUNCTION TO DISPLAY CLUES WHEN LOCATION BUTTONS ARE PRESSED ####
+var historyArray = new Array();	//ARRAY TO HOLD SELECTED BUILDINGS
+	
+	function showClue(bldg){
+			
+		//if(document.getElementById('caseName').innerHTML != null){
+			var building = bldg.value;  //GET NAME OF BUILDING
+			historyCount = historyArray.unshift(building);
+			
+			
+			//GET RID OF HISTORY AFTER 12
+			if(historyArray.length > 12) {
+				historyArray.pop();			
+			}
+			var historyList = historyArray.toString();
+			var histListFormat2 = historyList.replace(/,/g, "<br />");
+			var histListFormat = historyArray.join("<br />");
+			document.getElementById('searchText').innerHTML = histListFormat;
+			
+			var caseIndex = parseInt(window.caseNum);//GET CASE INDEX
+			var clueIndex = parseInt(bldg.id);//GET BUILDINGINDEX
+			var clueNumber = cases[caseIndex][clueIndex];//GET CLUENUMBER
+			var clueText = clueArray[clueNumber];//GET CLUE TEXT STRING
+			
+			//OUTPUT CLUE TEXT TO CLUE BOX
+			document.getElementById('clueText').innerHTML = "<strong>" + clueText + "</strong>";
+						
+			//INITIALIZE TIMER BOX FOR CLUE DISPLAY			
+			setTimeout('hideClue()', 35000);//TIMER SET FOR 35 SECONDS					
+			document.getElementById('timerInner').style.display = "block";
+			document.getElementById('timerInner').style.width = "100%";//START RED BAR AT 100% ACROSS	
+			countdown = 100;//INITIALIZE COUNTDOWN
+			timeBar = setInterval('timePercent()',1000);//FUNCTION FOR TIMER BOX RED BAR						
+	}
+
+//####FUNCTION TO SHRINK THE RED BAR IN THE COUNTDOWN BOX AS PART OF THE TIMER	
+	function timePercent(){
+		//countdown = 100;
+		if(countdown > 0){
+		//document.getElementById('timerInner').style.display = "block";
+		countdown = countdown - 2.86;
+		document.getElementById('timerInner').style.width = countdown+"%";
+		//document.getElementById('timerInner').innerHTML = countdown;
+		}
+		else clearInterval(timeBar);
+	}
+//####FUNCTION TO RESET THE CLUE BOX TO EMPTY####	
+	function hideClue(){
+			document.getElementById('clueText').innerHTML = null;
+			clearInterval(timeBar);
+			document.getElementById('timerInner').style.width = 0+"%";
+	}
+</script>
+<br class="clear" />
+</div><!--==END CONTAINER==-->
+</body>
+</html>
