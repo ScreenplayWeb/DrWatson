@@ -1,0 +1,145 @@
+/**  221-B Baker Street (the board game) Player Aid.
+By Sean W Doyle.
+v 2.0 July 2020
+
+*/
+
+/*==COMMON STYLING===========================================================*/
+
+body{background:#5c2d37;font-size:14px;}
+
+em{ color:#ffee48;}
+
+label{padding:3px 0 0 3px;}
+
+h1{margin:10px 0;text-align:left;}
+
+h3#caseName{color:#fff; text-align:center;}
+h3#timerHead{text-align:center;margin: 5px 0}
+
+legend{font-size:2em;}
+p#clueText{font-size:1.75em;}
+
+#titleBox{color:#ffee48;}
+
+#title{font-size:1em; position:absolute; top:22px;}
+
+#btnTitle{color:white;text-align:center;margin-bottom:5px;}
+
+#timerBox{ margin:0 auto;background:#e2b45c;border:1px solid #5c2d37;}
+
+#timerBG{width:90%; height:40px; margin:0 auto; background: #fff;border:1px solid #5c2d37;}
+
+#timerInner{ height:34px; background:#fcfdfd;}
+
+#timerInner{display:none; background:red; padding:0; border-top:3px solid #f66;border-bottom:3px solid #a00;}
+
+#history{float:right; width:200px; margin:0 auto; padding:15px 10px; font-size:17px;}
+
+.clear{clear:both;}
+
+
+
+/*==LANDSCAPE================================================================*/
+
+@media only screen and (orientation:landscape) {
+
+#container{width:1024px; height:600px; margin:0 auto; background: #3cb9e9; position:relative; border:10px solid #FFF;}
+
+h1{margin-left:150px; width:276px;}
+
+#title{position:absolute; top:22px;left:426px;}
+
+
+
+#rightCol {width:220px; background:#e2b45c; position: absolute; top:10px; right:10px; border:1px solid #5c2d37;}
+
+#leftCol {width: 700px; background:#415065;  -webkit-border-top-right-radius: 150px;
+
+-webkit-border-top-left-radius: 150px;
+
+-moz-border-radius-topright: 150px;
+
+-moz-border-radius-topleft: 150px;
+
+border-top-right-radius: 150px;
+
+border-top-left-radius: 150px;
+
+border:10px solid #FFF;
+
+margin-left:10px;}
+
+#btnField{width:610px; margin:0 auto;}
+
+button{
+
+height:40px;
+
+width:185px;
+
+margin-left:10px;
+
+font-size:0.85em;
+
+font-weight:bold;
+
+}
+
+#cluePnl{width:680px; margin:10px auto; background:#fcfdfd;  }
+
+#locPnl{width:655px;}/*LOCATION FIELDSET*/
+
+/*#timerBox{height: 100px;width:200px; padding:15px 10px; font-size:17px;position:absolute;bottom:10px;right:10px;}*/
+
+#timerBox{height: 100px;width:200px; padding:15px 10px; font-size:17px;float:right;margin-top:20px;}
+
+#eightysix{height:4em;}
+
+}/*END LANDSCAPE STYLING*/
+
+
+
+
+
+
+
+/*==PORTRAIT=================================================================*/
+
+@media only screen and (orientation:portrait) {
+
+#container{width:100%; margin:0 auto; background: #3cb9e9; position:relative; border:10px solid #FFF;}
+
+#titleBox{margin-left:100px;}
+
+#title{left:32.812%;font-size:1.5em;}
+
+#leftCol {width: 68.359%; background:#415065;  
+
+-webkit-border-top-right-radius: 50px;
+
+-webkit-border-top-left-radius: 50px;
+
+-moz-border-radius-topright: 50px;
+
+-moz-border-radius-topleft: 50px;
+
+border-top-right-radius: 50px;
+
+border-top-left-radius: 50px;
+
+border:10px solid #FFF;
+
+margin:0 auto;}
+
+#btnField{width:66.406%; margin:0 auto;margin-bottom:15px;}
+
+button{height:7.812%;width:29.296%;margin-left:20px;font-size:2em;font-weight:bold;margin-bottom:20px;}
+
+legend{color:#fff;}
+
+#cluePnl{width:63.476%; margin:10px auto;color:#ffee48;}
+
+#caseSelectBox{position:relative; top:30px; right:30px;}
+
+}/*END PORTRAIT STYLING*/
