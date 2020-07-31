@@ -2,13 +2,20 @@
 By Sean W Doyle.
 v 2.0 July 2020
 
+New in V2
+
+For next v
+
 */
 window.onload = function(){
 	var caseNum;
 	var timeRemain;
 	var countdown;
+
 //GET NEEDED ELEMENTS
 var slct_case = document.getElementById("CaseSelect");
+
+
 //####FUNCTION TO DISPLAY STRING NAME OF CASE AND GET CASE ID	####
 	function caseSelect(dropdown) {
 	  case2show = dropdown.options[dropdown.selectedIndex].text;
@@ -27,15 +34,13 @@ var slct_case = document.getElementById("CaseSelect");
 
 
 //####FUNCTION TO DISPLAY CLUES WHEN LOCATION BUTTONS ARE PRESSED ####
-
-var historyArray = new Array();	//ARRAY TO HOLD SELECTED BUILDINGS
+var historyArray = [];//ARRAY TO HOLD SELECTED BUILDINGS
 
 	function showClue(bldg){
 		//if(document.getElementById('caseName').innerHTML != null){
 			var building = bldg.value;  //GET NAME OF BUILDING
 			historyCount = historyArray.unshift(building);
 			
-
 			//GET RID OF HISTORY AFTER 12
 			if(historyArray.length > 12) {
 				historyArray.pop();
@@ -60,8 +65,7 @@ var historyArray = new Array();	//ARRAY TO HOLD SELECTED BUILDINGS
 			document.getElementById('timerInner').style.width = "100%";//START RED BAR AT 100% ACROSS
 			countdown = 100;//INITIALIZE COUNTDOWN
 			timeBar = setInterval('timePercent()',1000);//FUNCTION FOR TIMER BOX RED BAR
-	}
-
+	}//end showClue
 
 
 //####FUNCTION TO SHRINK THE RED BAR IN THE COUNTDOWN BOX AS PART OF THE TIMER
