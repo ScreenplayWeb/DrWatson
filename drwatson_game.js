@@ -8,65 +8,78 @@ For next v
 
 */
 window.onload = function(){
-	var caseNum;
+	var case2show, caseNum;
 	var timeRemain;
 	var countdown;
+	var historyArray = [];//ARRAY TO HOLD SELECTED BUILDINGS
+	var timerVar = null;
 
 //GET NEEDED ELEMENTS
 var slct_case = document.getElementById("CaseSelect");
+var txt_case = document.getElementById("caseName");
+var btns_clues = document.getElementsByClassName("btn_location");
+var li_searches = document.getElementById('searchText');
+var txt_clue = document.getElementById('clueText');
 
-
-//####FUNCTION TO DISPLAY STRING NAME OF CASE AND GET CASE ID	####
-	function caseSelect(dropdown) {
-	  case2show = dropdown.options[dropdown.selectedIndex].text;
-		caseNum = dropdown.options[dropdown.selectedIndex].value;
+//####FUNCTION TO GET CASE ID AND DISPLAY STRING NAME OF CASE ####
+	function caseSelect() {
+		let caseNameText = "";
+		case2show = slct_case.options[slct_case.selectedIndex].text;
+		caseNum = slct_case.options[slct_case.selectedIndex].value;
 
 		//CHECK WHICH CASE WAS SELECTED AND GRAB THE ID AND TEXT VALUE
 		//IF --SELECT-- WAS SELECTED, SHOW NOTHING
 		if (caseNum !== "zz"){
-		var caseNameText = caseName[caseNum];
+			caseNameText = caseName[caseNum];
 
 		//DISPLAY THE NAME OF THE CASE
-		document.getElementById('caseName').innerHTML = "You are currently solving: <br /><em>The Adventure of " + caseNameText + "</em>";
+			txt_case.innerHTML = "You are currently solving: <br /><em>The Adventure of " + caseNameText + "</em>";
+		} else {
+			txt_case.innerHTML = "";
 		}
-		else document.getElementById('caseName').innerHTML = null;
-  }
+  }//END caseSelect
 
 
 //####FUNCTION TO DISPLAY CLUES WHEN LOCATION BUTTONS ARE PRESSED ####
-var historyArray = [];//ARRAY TO HOLD SELECTED BUILDINGS
-
-	function showClue(bldg){
-		//if(document.getElementById('caseName').innerHTML != null){
-			var building = bldg.value;  //GET NAME OF BUILDING
-			historyCount = historyArray.unshift(building);
+	function showClue(){
+			var building = this.value;  //GET NAME OF BUILDING
+			let clueIndex = parseInt(this.id);//GET BUILDING INDEX
+			let historyCount = historyArray.unshift(building);
 			
 			//GET RID OF HISTORY AFTER 12
 			if(historyArray.length > 12) {
 				historyArray.pop();
 			}
 
-			var historyList = historyArray.toString();
-			var histListFormat2 = historyList.replace(/,/g, "<br />");
-			var histListFormat = historyArray.join("<br />");
-			document.getElementById('searchText').innerHTML = histListFormat;
+			//UPDATE LOCATION HISTORY
+			let historyList = historyArray.toString();
+			let histListFormat2 = historyList.replace(/,/g, "<br />");
+			let histListFormat = historyArray.join("<br />");
+			li_searches.innerHTML = histListFormat;
 
-			var caseIndex = parseInt(window.caseNum);//GET CASE INDEX
-			var clueIndex = parseInt(bldg.id);//GET BUILDINGINDEX
-			var clueNumber = cases[caseIndex][clueIndex];//GET CLUENUMBER
-			var clueText = clueArray[clueNumber];//GET CLUE TEXT STRING
+			//DISPLAY CLUE TEXT
+			let clueNumber = cases[caseNum][clueIndex];//GET CLUENUMBER
+			let clueText = clueArray[clueNumber];//GET CLUE TEXT STRING
+			txt_clue.innerHTML = "<strong>" + clueText + "</strong>";
 
-			//OUTPUT CLUE TEXT TO CLUE BOX
-			document.getElementById('clueText').innerHTML = "<strong>" + clueText + "</strong>";
-
-			//INITIALIZE TIMER BOX FOR CLUE DISPLAY
+			//START TIMER
+			resetTimer();
+	}//end showClue
+//==============================================================================UNVERIFIED=============
+	function resetTimer() {
+		//RESET TIMER VARIABLE
+		console.log("START TIMER");
+		/*clearInterval(timerVar);
+		timerVar = null;
+		
+					//INITIALIZE TIMER BOX FOR CLUE DISPLAY
 			setTimeout('hideClue()', 35000);//TIMER SET FOR 35 SECONDS
 			document.getElementById('timerInner').style.display = "block";
 			document.getElementById('timerInner').style.width = "100%";//START RED BAR AT 100% ACROSS
 			countdown = 100;//INITIALIZE COUNTDOWN
-			timeBar = setInterval('timePercent()',1000);//FUNCTION FOR TIMER BOX RED BAR
-	}//end showClue
-
+			timeBar = setInterval('timePercent()',1000);//FUNCTION FOR TIMER BOX RED BAR*/
+		
+	}//END resetTimer
 
 //####FUNCTION TO SHRINK THE RED BAR IN THE COUNTDOWN BOX AS PART OF THE TIMER
 	function timePercent(){
@@ -149,15 +162,7 @@ var historyArray = [];//ARRAY TO HOLD SELECTED BUILDINGS
 
 }*/
 
-	function showClue(bldg){
 
-			//alert(bldg.value);
-
-			var building = bldg.value;
-
-			document.getElementById('clueText').innerHTML = "Button " + building;
-
-	}
 
 //###FUNCTION HIDES THE CLUE AFTER A PERSON'S TURN	###
 
@@ -166,7 +171,12 @@ var historyArray = [];//ARRAY TO HOLD SELECTED BUILDINGS
 			document.getElementById('clueText').innerHTML = null;
 
 	}
-//LISTENERS
+
+
+//===========================LISTENERS===========================
 	slct_case.onchange = caseSelect;
+	for (let i = 0; i < btns_clues.length; i++){
+		btns_clues[i].onclick = showClue;
+	}
 
 };//end onload

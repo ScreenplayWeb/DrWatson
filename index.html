@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head>	<meta charset="UTF-8" />	<meta name="robots" content="noindex, nofollow" />	<link rel="stylesheet" type="text/css" href="drwatson.css">	<script src="drwatson_game.js"></script>	<script src="drwatson_clues.js"></script>	<title>221-B Baker Street Player&apos;s Aid</title></head><body><!--Player aid for 221-B Baker Street (the board game).By Sean W Doyle.V 2.0 July 2020-->
+<!DOCTYPE html><html lang="en"><head>	<meta charset="UTF-8" />	<meta name="robots" content="noindex, nofollow" />	<link rel="stylesheet" type="text/css" href="drwatson.css">	<script src="drwatson_clues.js"></script>	<script src="drwatson_game.js"></script>	<title>221-B Baker Street Player&apos;s Aid</title></head><body><!--Player aid for 221-B Baker Street (the board game).By Sean W Doyle.V 2.0 July 2020-->
 <!--===TO DO LIST=ADD TERMS OF USE POLICY=MAKE BUTTONS TALLER=FIX DOUBLE COUNTDOWN (IF CONSECUTIVE LOCATION BUTTONS PUSHED??)=FIX CANCEL BUTTON IN LANDSCAPE MODE==ADD HIDECLUE() TO LOCATION BUTTON PRESS FUNCTION?=PUT ALL JS ON THIS PAGE=ADD CORRECT SIZES AND PORTRAIT/LANDSCAPE SWITCH=HAVE CASE SELECTION RESET SEARCH HISTORY=REMOVE UNUSED STYLING BUT DUPLICATED STYLING IN COMMON AREA-->
 <div id="container">
 <!--========TITLE BOX========-->	<div id="titleBox">
@@ -13,21 +13,21 @@
 <!--====LOCATIONS PANEL====-->
 	<div id="btnField">
 		<h3 id="btnTitle">Select a location to search for clues...</h3>	
-		<button id="0" type="button" value="APOTHECARY" onclick="showClue(this)" >APOTHECARY</button>
-		<button id="1" type="button" value="BANK" onclick="showClue(this)" >BANK</button>
-		<button id="2" type="button" value="CARRIAGE DEPOT" onclick="showClue(this)" >CARRIAGE DEPOT</button>
-		<button id="3" type="button" value="DOCK" onclick="showClue(this)" >DOCK</button>
-		<button id="4" type="button" value="HOTEL" onclick="showClue(this)" >HOTEL</button>
-		<button id="5" type="button" value="LOCKSMITH" onclick="showClue(this)" >LOCKSMITH</button>
-		<button id="6" type="button" value="MUSEUM" onclick="showClue(this)" >MUSEUM</button>
-		<button id="7" type="button" value="NEWSPAPER SHOP" onclick="showClue(this)" >NEWSPAPER SHOP</button>
+		<button id="0" class="btn_location" type="button" value="APOTHECARY" >APOTHECARY</button>
+		<button id="1" class="btn_location" type="button" value="BANK" >BANK</button>
+		<button id="2" class="btn_location" type="button" value="CARRIAGE DEPOT" >CARRIAGE DEPOT</button>
+		<button id="3" class="btn_location" type="button" value="DOCK" >DOCK</button>
+		<button id="4" class="btn_location" type="button" value="HOTEL" >HOTEL</button>
+		<button id="5" class="btn_location" type="button" value="LOCKSMITH" >LOCKSMITH</button>
+		<button id="6" class="btn_location" type="button" value="MUSEUM" >MUSEUM</button>
+		<button id="7" class="btn_location" type="button" value="NEWSPAPER SHOP" >NEWSPAPER SHOP</button>
 		 
-		<button id="8" type="button" value="PARK" onclick="showClue(this)" >PARK</button>
-		<button id="9" type="button" value="PAWNBROKER" onclick="showClue(this)" >PAWNBROKER</button>
-		<button id="10" type="button" value="PLAYHOUSE" onclick="showClue(this)" >PLAYHOUSE</button>
-		<button id="11" type="button" value="PUB" onclick="showClue(this)" >PUB</button>
-		<button id="12" type="button" value="SCOTLAND YARD" onclick="showClue(this)" >SCOTLAND YARD</button>
-		<button id="13" type="button" value="TOBACCONIST" onclick="showClue(this)" >TOBACCONIST</button>
+		<button id="8" class="btn_location" type="button" value="PARK" >PARK</button>
+		<button id="9" class="btn_location" type="button" value="PAWNBROKER" >PAWNBROKER</button>
+		<button id="10" class="btn_location" type="button" value="PLAYHOUSE" >PLAYHOUSE</button>
+		<button id="11" class="btn_location" type="button" value="PUB" >PUB</button>
+		<button id="12" class="btn_location" type="button" value="SCOTLAND YARD" >SCOTLAND YARD</button>
+		<button id="13" class="btn_location" type="button" value="TOBACCONIST" >TOBACCONIST</button>
 	</div><!--END btnField-->
 <!--====CLUE PANEL====-->
 	<div id="cluePnl">
