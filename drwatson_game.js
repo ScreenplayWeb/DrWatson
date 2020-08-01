@@ -5,7 +5,7 @@ v 2.0 July 2020
 New in V2
 
 For next v
-
+-standardize the text of the clues in the clues file
 */
 window.onload = function(){
 	var case2show, caseNum;

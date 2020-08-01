@@ -5,6 +5,13 @@ v 2.0 July 2020
 THIS FILE HOLDS THE CASE AND CLUE TEXT TO PLAY WITH THE 221-B BAKER STREET BOARD GAME (1977 Hansen Edition).
 THIS IS INTENDED AS A PLAYER'S AID AND REQUIRES THE BOARD GAME TO PLAY.
 All textual content copyright 1977 John N. Hansen Co., Inc.
+
+TO DO 
+-set standards
+-blanks (5 underscores?)
+- part clues with roman numerals
+-rhymes with text (in quotes?  ryhmes with 'flat')
+-type of clue separated from text of clue.
 */
 
 //====CASE NAME ARRAY
@@ -121,7 +128,7 @@ const clueArray = ["CLUE 0",
 
 "Longworth was seen reading a Bible to the victim and Duke Tallcourt the day before the murder.",
 
-"KILLER CLUE (Two Parts) I Up against the",
+"KILLER CLUE (Two Parts) I Up against the ____.",
 
 "Sir Bertram Lam pfelt just returned from a recent trip to Paris.",
 
@@ -139,9 +146,9 @@ const clueArray = ["CLUE 0",
 
 "A clue to the assassin's identity is at the Newspaper Shop.",
 
-"GENERAL MOTIVE CLUE You can't judge a book by it's cover.",
+"GENERAL MOTIVE CLUE You can't judge a book by its cover.",
 
-"KILLER CLUE (Two Parts) II 2,000 pounds. (Unit of Measure)",
+"KILLER CLUE (Two Parts) II 2,000 pounds (unit of measure).",
 
 "WEAPON CLUE (Three Parts) I Money paid for a service.",
 
@@ -261,11 +268,11 @@ const clueArray = ["CLUE 0",
 
 "KILLER CLUE (Two Parts) II Value.",
 
-"MOTIVE CLUES (Four Parts) I Caesarwasa __ IV A large body of salt water.",
+"MOTIVE CLUES (Four Parts) I Caesar was a __. IV A large body of salt water.",
 
 "WEAPON CLUE (Three Parts) III The opposite of most.",
 
-"The pawnbroker's ticket at the scene of the crime belonged to Sir Reginald Cosg rove.",
+"The pawnbroker's ticket at the scene of the crime belonged to Sir Reginald Cosgrove.",
 
 "KILLER CLUE (Two Parts) I The opposite of front.",
 
@@ -305,7 +312,7 @@ const clueArray = ["CLUE 0",
 
 "Torchfield bought the cuckoo clock on a recent trip to Switzerland.",
 
-"WEAPON CLUES (Three Parts) I When you have no money, you're flat II The alphabet letter after M.",
+"WEAPON CLUES (Three Parts) I When you have no money, you're flat ____. II The alphabet letter after M.",
 
 "Both Rita Frawley and Patrick Reardon are left-handed.",
 
