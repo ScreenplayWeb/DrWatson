@@ -40,9 +40,9 @@ p#clueText{font-size:1.75em;}
 
 
 
-/*==LANDSCAPE================================================================*/
+/*==LANDSCAPE================================================================
 
-@media only screen and (orientation:landscape) {
+@media only screen and (orientation:landscape) {*/
 
 #container{width:1024px; height:600px; margin:0 auto; background: #3cb9e9; position:relative; border:10px solid #FFF;}
 
@@ -51,8 +51,12 @@ h1{margin-left:150px; width:276px;}
 #title{position:absolute; top:22px;left:426px;}
 
 
-
+/*Case, history, and timer section*/
 #rightCol {width:220px; background:#e2b45c; position: absolute; top:10px; right:10px; border:1px solid #5c2d37;}
+#CaseSelect {
+	margin-left: 10%;
+}
+
 
 #leftCol {width: 700px; background:#415065;  -webkit-border-top-right-radius: 150px;
 
@@ -96,7 +100,7 @@ font-weight:bold;
 
 #eightysix{height:4em;}
 
-}/*END LANDSCAPE STYLING*/
+/*}END LANDSCAPE STYLING*/
 
 
 
@@ -104,7 +108,7 @@ font-weight:bold;
 
 
 
-/*==PORTRAIT=================================================================*/
+/*==PORTRAIT=================================================================
 
 @media only screen and (orientation:portrait) {
 
@@ -142,4 +146,5 @@ legend{color:#fff;}
 
 #caseSelectBox{position:relative; top:30px; right:30px;}
 
-}/*END PORTRAIT STYLING*/
+}/*END PORTRAIT STYLING
+*/
