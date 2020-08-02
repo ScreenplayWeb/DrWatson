@@ -44,7 +44,7 @@ const cases = [
 [1, 11, 21, 31, 41, 51, 61, 71, 76, 91, 101, 111, 121, 131],
 [2,12,22,32,42,52,62,72,77,92,102,112,122,132],
 [4, 14, 24, 34, 44, 54, 64, 74, 79, 94, 104, 114, 124, 134],
-[7,17,27,37,47,57,67,82,87,97,107,117,127,137)],
+[7,17,27,37,47,57,67,82,87,97,107,117,127,137],
 [141,146,151,156,161,166,171,176,181,196,192,201,186,206],
 [5,15,25,35,45,55,65,75,80,95,105,115,125,135],
 [239,224,234,244,249,254,259,264,269,274,219,214,229,279],
@@ -98,7 +98,7 @@ const clueArray = ["CLUE 0",
 
 "The package contained a look-alike replica of the Ziegfield necklace and a note. For text of note, go to Tobacconist.",
 
-"\"SURPRISE\" CLUE(Threepar.ts) III More than one sip.",
+"\"SURPRISE\" CLUE(Three parts) III More than one sip.",
 
 "WEAPON CLUE (Three Parts) III Common name for an urban area.",
 
@@ -148,7 +148,7 @@ const clueArray = ["CLUE 0",
 
 "The Duchess's daughter, Anastasia, did not like the strange preacher.",
 
-"Mr. Foster and Mrs. Walton were seen whisperirg to each other in the Hotel lobby the day before the murder.",
+"Mr. Foster and Mrs. Walton were seen whispering to each other in the Hotel lobby the day before the murder.",
 
 "KILLER CLUE (Three Parts) I Not variables.",
 
@@ -278,7 +278,7 @@ const clueArray = ["CLUE 0",
 
 "\"WHO'S BEHIND IT\" CLUE (Four Parts) III The alphabet letter after Q. IV A favorite British beverage.",
 
-"HIDING PLACE CLUE (Four Parts) I To compete with. IV Afterj'scome ___",
+"HIDING PLACE CLUE (Four Parts) I To compete with. IV After J's come _____",
 
 "WEAPON CLUE (Three Parts) II Moss grows on the north side of a ____",
 
@@ -346,7 +346,7 @@ const clueArray = ["CLUE 0",
 
 "No clue.",
 
-"CODE CLUE H=l B=C",
+"CODE CLUE H=I B=C",
 
 "The hunk of candle found by Holmes was from a heavy decorative candle approximately two kilograms (six pounds) in weight. It's safe to assume that a man taking a candle for the purpose of lighting his way, would use a much smaller candle.",
 
@@ -356,7 +356,7 @@ const clueArray = ["CLUE 0",
 
 "The weapon and the courier's valise were thrown overboard.",
 
-"CODE CLUE O~P",
+"CODE CLUE O=P",
 
 "KILLER CLUE (Four Parts) I The opposite of lose.",
 
@@ -366,7 +366,7 @@ const clueArray = ["CLUE 0",
 
 "Prescott's ship is being repossessed.",
 
-"CODE CLUE ZA X~Y",
+"CODE CLUE Z=A X=Y",
 
 "COMPLETE WEAPON CLUES I A cylindrical tin container. II The opposite of sharp or bright.",
 
@@ -386,7 +386,7 @@ const clueArray = ["CLUE 0",
 
 "Holmes noticed a streak of rust between the thumb and forefinger of Captain Prescott's right hand.",
 
-"CODECLUE K--L",
+"CODE CLUE K=L",
 
 "While Mrs. Dunphy disdained all social activities, Mr. Dunphy yearned for a more active night life.",
 
