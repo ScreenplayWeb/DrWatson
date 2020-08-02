@@ -28,7 +28,7 @@ var txt_case    = document.getElementById("caseName");
 var li_searches = document.getElementById('searchText');
 var txt_clue    = document.getElementById('clueText');
 var timeBar     = document.getElementById('timerInner');
-var btn_hide     = document.getElementById('btn_hideClue');
+var btn_hide    = document.getElementById('btn_hideClue');
 var btns_clues  = document.getElementsByClassName("btn_location");
 
 
