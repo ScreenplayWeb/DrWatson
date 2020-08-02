@@ -8,11 +8,11 @@ For next v
 -standardize the text of the clues in the clues file
 */
 window.onload = function(){
-	var case2show, caseNum;
-	var timeRemain;
-	var countdown;
-	var historyArray = [];//ARRAY TO HOLD SELECTED BUILDINGS
-	var timerVar = null;
+var case2show, caseNum;
+var timeRemain;
+var countdown = 0;
+var historyArray = [];//ARRAY TO HOLD SELECTED BUILDINGS
+var timerVar = null;//interval variable
 
 //GET NEEDED ELEMENTS
 var slct_case = document.getElementById("CaseSelect");
@@ -20,7 +20,9 @@ var txt_case = document.getElementById("caseName");
 var btns_clues = document.getElementsByClassName("btn_location");
 var li_searches = document.getElementById('searchText');
 var txt_clue = document.getElementById('clueText');
+var timeBar = document.getElementById('timerInner');
 
+//====FUNCTIONS========================================================
 //####FUNCTION TO GET CASE ID AND DISPLAY STRING NAME OF CASE ####
 	function caseSelect() {
 		let caseNameText = "";
@@ -57,50 +59,52 @@ var txt_clue = document.getElementById('clueText');
 			let histListFormat = historyArray.join("<br />");
 			li_searches.innerHTML = histListFormat;
 
+			//START TIMER
+			resetTimer();
+			
 			//DISPLAY CLUE TEXT
 			let clueNumber = cases[caseNum][clueIndex];//GET CLUENUMBER
 			let clueText = clueArray[clueNumber];//GET CLUE TEXT STRING
 			txt_clue.innerHTML = "<strong>" + clueText + "</strong>";
-
-			//START TIMER
-			resetTimer();
 	}//end showClue
-//==============================================================================UNVERIFIED=============
+
+
+//####FUNCTION TO RESET AND START THE CLUE TIMER
 	function resetTimer() {
-		//RESET TIMER VARIABLE
-		console.log("START TIMER");
-		/*clearInterval(timerVar);
+	//RESET TIMER VARIABLE AND TIMER DIV
+		hideClue();
+		countdown = 0;
+		clearInterval(timerVar);
 		timerVar = null;
-		
-					//INITIALIZE TIMER BOX FOR CLUE DISPLAY
-			setTimeout('hideClue()', 35000);//TIMER SET FOR 35 SECONDS
-			document.getElementById('timerInner').style.display = "block";
-			document.getElementById('timerInner').style.width = "100%";//START RED BAR AT 100% ACROSS
-			countdown = 100;//INITIALIZE COUNTDOWN
-			timeBar = setInterval('timePercent()',1000);//FUNCTION FOR TIMER BOX RED BAR*/
-		
+		timeBar.style.display = "block";
+		timeBar.style.width = "100%";
+
+	//INITIALIZE TIMER BOX FOR CLUE DISPLAY
+		countdown = 100;
+		timerVar = setInterval(timePercent, 1000);//FUNCTION FOR TIMER BOX RED BAR
 	}//END resetTimer
 
 //####FUNCTION TO SHRINK THE RED BAR IN THE COUNTDOWN BOX AS PART OF THE TIMER
 	function timePercent(){
-		//countdown = 100;
 		if(countdown > 0){
-		//document.getElementById('timerInner').style.display = "block";
-		countdown = countdown - 2.86;
-		document.getElementById('timerInner').style.width = countdown+"%";
-		//document.getElementById('timerInner').innerHTML = countdown;
+			countdown = countdown - (100/35);//2.86;
+			timeBar.style.width = countdown + "%";
+		} else {
+			clearInterval(timerVar);
+			timeBar.style.width = "0%";
+			hideClue();
 		}
-		else clearInterval(timeBar);
-	}
+	}//END timePercent
 
-//####FUNCTION TO RESET THE CLUE BOX TO EMPTY####	
+//####FUNCTION TO RESET THE CLUE BOX TO EMPTY
 	function hideClue(){
-			document.getElementById('clueText').innerHTML = null;
-			clearInterval(timeBar);
-			document.getElementById('timerInner').style.width = 0+"%";
-	}
-	
-	//====FUNCTIONS====
+		txt_clue.innerHTML = "";
+		clearInterval(timeBar);
+		timeBar.style.width = 0+"%";
+	}//END hideClue
+//==============================================================================UNVERIFIED=============
+
+
 
 	
 
