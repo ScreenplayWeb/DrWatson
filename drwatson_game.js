@@ -105,69 +105,6 @@ var timeBar = document.getElementById('timerInner');
 //==============================================================================UNVERIFIED=============
 
 
-
-	
-
-	function showCase(thisCase){
-
-		//alert("Here's the case!");
-
-		//alert(this.value);
-
-		//var case2show = thisCase.options(thisCase.selectedIndex).text;
-
-		var case2show = thisCase.options[thisCase.selectedIndex].value;
-
-		alert(case2Show);
-
-		
-
-		var caseNameText = caseName[case2show];
-
-		document.getElementById('caseName').innerHTML = "You are currently solving <em>" + caseNameText + "</em> mystery.";	
-
-	}
-
-
-
-//####FUNCTION TO DISPLAY STRING NAME OF CASE	####
-
-	function getData(dropdown) {
-
-    var case2show = dropdown.options[dropdown.selectedIndex].text;
-
-	var value = dropdown.options[dropdown.selectedIndex].value;
-
-    alert("Value:" + value + " Text:" +case2show);
-
-	var caseNameText = caseName[value];
-
-	document.getElementById('caseName').innerHTML = "You are currently solving <em>" + caseNameText + "</em>";
-
-}
-
-	
-
-//####FUNCTION DISPLAYS NAME OF SELECTED CASE###	
-
-/*	function getData(dropdown) {
-
-    var case2show = dropdown.options[dropdown.selectedIndex].text;
-
-	var value = dropdown.options[dropdown.selectedIndex].value;
-
-     alert("Value:" + value + " Text:" +text);
-
-	
-
-	//var caseNameText = caseName[case2show];
-
-	document.getElementById('caseName').innerHTML = "You are currently solving <em>" + case2show + "</em>.";
-
-}*/
-
-
-
 //###FUNCTION HIDES THE CLUE AFTER A PERSON'S TURN	###
 
 	function hideClue(){
