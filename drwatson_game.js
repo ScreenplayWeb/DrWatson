@@ -4,14 +4,14 @@ v2.0 July 2020
 
 #TODO
 =relocate timer? fixed? over case select?
-
 =fix styling, set to non-responsive
+=add bg tile (see cluesreader-Jan8>221bBakerSt> tile.png)
 =fix clue text
 =standardize clue text
 
 New in v2.0
 =fixed timer bug
-=fix hideClue function
+
 For next v
 -standardize the text of the clues in the clues file
 */
@@ -70,7 +70,7 @@ var btns_clues  = document.getElementsByClassName("btn_location");
 			li_searches.innerHTML = histListFormat;
 
 			//START TIMER
-			resetTimer();
+			//resetTimer();
 			
 			//DISPLAY CLUE TEXT
 			let clueNumber = cases[caseNum][clueIndex];//GET CLUENUMBER
