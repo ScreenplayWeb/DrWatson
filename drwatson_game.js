@@ -1,9 +1,17 @@
 /** 221-B Baker Street (the board game) Player Aid.
 By Sean W Doyle.
-v 2.0 July 2020
+v2.0 July 2020
 
-New in V2
+#TODO
+=relocate timer? fixed? over case select?
 
+=fix styling, set to non-responsive
+=fix clue text
+=standardize clue text
+
+New in v2.0
+=fixed timer bug
+=fix hideClue function
 For next v
 -standardize the text of the clues in the clues file
 */
@@ -15,12 +23,14 @@ var historyArray = [];//ARRAY TO HOLD SELECTED BUILDINGS
 var timerVar = null;//interval variable
 
 //GET NEEDED ELEMENTS
-var slct_case = document.getElementById("CaseSelect");
-var txt_case = document.getElementById("caseName");
-var btns_clues = document.getElementsByClassName("btn_location");
+var slct_case   = document.getElementById("CaseSelect");
+var txt_case    = document.getElementById("caseName");
 var li_searches = document.getElementById('searchText');
-var txt_clue = document.getElementById('clueText');
-var timeBar = document.getElementById('timerInner');
+var txt_clue    = document.getElementById('clueText');
+var timeBar     = document.getElementById('timerInner');
+var btn_hide     = document.getElementById('btn_hideClue');
+var btns_clues  = document.getElementsByClassName("btn_location");
+
 
 //====FUNCTIONS========================================================
 //####FUNCTION TO GET CASE ID AND DISPLAY STRING NAME OF CASE ####
@@ -91,7 +101,6 @@ var timeBar = document.getElementById('timerInner');
 			timeBar.style.width = countdown + "%";
 		} else {
 			clearInterval(timerVar);
-			timeBar.style.width = "0%";
 			hideClue();
 		}
 	}//END timePercent
@@ -99,23 +108,14 @@ var timeBar = document.getElementById('timerInner');
 //####FUNCTION TO RESET THE CLUE BOX TO EMPTY
 	function hideClue(){
 		txt_clue.innerHTML = "";
-		clearInterval(timeBar);
+		clearInterval(timerVar);
 		timeBar.style.width = 0+"%";
 	}//END hideClue
-//==============================================================================UNVERIFIED=============
-
-
-//###FUNCTION HIDES THE CLUE AFTER A PERSON'S TURN	###
-
-	function hideClue(){
-
-			document.getElementById('clueText').innerHTML = null;
-
-	}
 
 
 //===========================LISTENERS===========================
 	slct_case.onchange = caseSelect;
+	btn_hide.onclick = hideClue;
 	for (let i = 0; i < btns_clues.length; i++){
 		btns_clues[i].onclick = showClue;
 	}

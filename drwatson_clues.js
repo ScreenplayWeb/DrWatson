@@ -12,6 +12,7 @@ TO DO
 - part clues with roman numerals
 -rhymes with text (in quotes?  ryhmes with 'flat')
 -type of clue separated from text of clue.
+-tidy up cases arrays, get rid of new Array, make const.
 */
 
 //====CASE NAME ARRAY
