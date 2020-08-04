@@ -70,7 +70,7 @@ var btns_clues  = document.getElementsByClassName("btn_location");
 			li_searches.innerHTML = histListFormat;
 
 			//START TIMER
-			//resetTimer();
+			resetTimer();
 			
 			//DISPLAY CLUE TEXT
 			let clueNumber = cases[caseNum][clueIndex];//GET CLUENUMBER
